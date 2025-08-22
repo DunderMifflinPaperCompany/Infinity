@@ -6,5 +6,8 @@
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index()
 
+# Vulnerable endpoint that accepts user input and outputs it unsanitized (XSS vulnerability)
+GET     /welcome                    controllers.HomeController.welcome(name: String)
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

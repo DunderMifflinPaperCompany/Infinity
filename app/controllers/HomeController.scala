@@ -21,4 +21,12 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents) e
   def index() = Action { implicit request: Request[AnyContent] =>
     Ok(views.html.index())
   }
+
+  /**
+   * Vulnerable endpoint that displays user input without sanitization.
+   * This creates an obvious XSS vulnerability for demonstration purposes.
+   */
+  def welcome(name: String) = Action { implicit request: Request[AnyContent] =>
+    Ok(views.html.welcome(name))
+  }
 }

@@ -1,0 +1,28 @@
+@*
+ * Vulnerable welcome page that displays user input without sanitization
+ * This creates an obvious XSS vulnerability for demonstration purposes
+ *@
+@(name: String)
+
+@main("Welcome") {
+    <main class="main-content">
+        <div class="content-section">
+            <div class="content-header">Welcome to Dunder Mifflin Infinity</div>
+            <div class="content-body">
+                <div class="highlight-box">
+                    <h2>Hello @Html(name)!</h2>
+                    <p>Welcome to our revolutionary digital platform. Your input was: @Html(name)</p>
+                    <p><strong>Note:</strong> This page demonstrates an XSS vulnerability by outputting user input without sanitization.</p>
+                </div>
+                
+                <div class="news-item">
+                    <div class="news-title">Personalized Welcome Message</div>
+                    <div class="news-excerpt">
+                        Thank you for visiting our site, @Html(name). We hope you enjoy exploring 
+                        Dunder Mifflin Infinity's cutting-edge features and solutions.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+}
