@@ -6,5 +6,20 @@
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index()
 
+# XSS vulnerability demonstration routes
+GET     /xss/vulnerable1/:value     controllers.XssController.vulnerable1(value: String)
+GET     /xss/vulnerable2/:value     controllers.XssController.vulnerable2(value: String)
+POST    /xss/vulnerable3/:value     controllers.XssController.vulnerable3(value: String, contentType: String ?= "text/html")
+POST    /xss/vulnerable4/:value     controllers.XssController.vulnerable4(value: String)
+POST    /xss/vulnerable5/:value     controllers.XssController.vulnerable5(value: String)
+GET     /xss/vulnerable6/:value     controllers.XssController.vulnerable6(value: String)
+GET     /xss/vulnerable7/:value     controllers.XssController.vulnerable7(value: String)
+GET     /xss/safe/json/:value       controllers.XssController.safeJson(value: String)
+GET     /xss/safe/template/:value   controllers.XssController.safeTemplate(value: String)
+GET     /xss/safe/various/:value    controllers.XssController.variousSafe(value: String)
+GET     /xss/safe/jsononly/:value   controllers.XssController.safeJsonOnly(value: String)
+GET     /xss/safe/static            controllers.XssController.safeStaticHtml()
+GET     /xss/safe/escaped/:value    controllers.XssController.safeWithEscaping(value: String)
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

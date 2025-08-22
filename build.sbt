@@ -9,6 +9,8 @@ scalaVersion := "2.13.16"
 
 libraryDependencies += guice
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "7.0.2" % Test
+libraryDependencies += "org.apache.commons" % "commons-lang3" % "3.12.0"
+libraryDependencies += "org.owasp.encoder" % "encoder" % "1.2.3"
 
 // Adds additional packages into Twirl
 //TwirlKeys.templateImports += "com.dundermifflin.controllers._"
