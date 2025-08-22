@@ -20,7 +20,7 @@ jobs:
         distribution: 'temurin'
     
     - name: Set up SBT
-      uses: actions/setup-sbt@v3
+      uses: sbt/setup-sbt@v1
         
     - name: Cache SBT dependencies
       uses: actions/cache@v4
